@@ -1,0 +1,1 @@
+json.partial! "vehicle_category_and_payments/vehicle_category_and_payment", vehicle_category_and_payment: @vehicle_category_and_payment

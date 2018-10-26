@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  payment_per_km: 9.99
+  payment_per_return_km: 9.99
+
+two:
+  category: MyString
+  payment_per_km: 9.99
+  payment_per_return_km: 9.99

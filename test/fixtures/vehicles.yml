@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand: MyString
+  type: 
+  year: 1
+  vehicle_category_and_payment: one
+
+two:
+  brand: MyString
+  type: 
+  year: 1
+  vehicle_category_and_payment: two

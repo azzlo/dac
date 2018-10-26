@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @vehicle_category_and_payment.category %>
+</p>
+
+<p>
+  <strong>Payment per km:</strong>
+  <%= @vehicle_category_and_payment.payment_per_km %>
+</p>
+
+<p>
+  <strong>Payment per return km:</strong>
+  <%= @vehicle_category_and_payment.payment_per_return_km %>
+</p>
+
+<%= link_to 'Edit', edit_vehicle_category_and_payment_path(@vehicle_category_and_payment) %> |
+<%= link_to 'Back', vehicle_category_and_payments_path %>

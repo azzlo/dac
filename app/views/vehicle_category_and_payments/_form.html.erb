@@ -1,0 +1,32 @@
+<%= form_with(model: vehicle_category_and_payment, local: true) do |form| %>
+  <% if vehicle_category_and_payment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vehicle_category_and_payment.errors.count, "error") %> prohibited this vehicle_category_and_payment from being saved:</h2>
+
+      <ul>
+      <% vehicle_category_and_payment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment_per_km %>
+    <%= form.text_field :payment_per_km %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment_per_return_km %>
+    <%= form.text_field :payment_per_return_km %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+class VehicleCategoryAndPayment < ApplicationRecord
+end

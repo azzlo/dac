@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'home#index'
+  get 'home/index'
   resources :vehicles
   resources :vehicle_category_and_payments
   resources :routes

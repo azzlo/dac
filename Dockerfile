@@ -8,6 +8,6 @@ COPY Gemfile.lock /myapp/Gemfile.lock
 # Change your IP with your docker-host-ip
 # And run gemstash container xD
 RUN bundle config mirror.https://rubygems.org http://192.168.6.121:9292
-RUN bundle config mirror.https://rubygems.org.fallback_timeout 3
+RUN bundle config mirror.https://rubygems.org.fallback_timeout 2
 RUN bundle install
 COPY . /myapp

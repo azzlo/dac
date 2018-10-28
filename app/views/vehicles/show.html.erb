@@ -16,8 +16,14 @@
 </p>
 
 <p>
+  <strong>Ejes:</strong>
+  <%= @vehicle.edges %>
+</p>
+
+
+<p>
   <strong>Vehicle category and payment:</strong>
-  <%= @vehicle.vehicle_category_and_payment %>
+  <%= @vehicle.vehicle_category_and_payment.category if @vehicle.vehicle_category_and_payment.present? %>
 </p>
 
 <%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |

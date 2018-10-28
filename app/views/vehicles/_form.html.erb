@@ -27,6 +27,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :edges %>
+    <%= form.select :edges, %w[2 3 4 5 6] %>
+  </div>
+
+  <div class="field">
     <%= form.label :vehicle_category_and_payment_id %>
     <%= form.select :vehicle_category_and_payment_id, VehicleCategoryAndPayment.all.collect{ |v| [v.category, v.id] } %>
   </div>

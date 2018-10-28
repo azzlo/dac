@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_26_142117) do
+ActiveRecord::Schema.define(version: 2018_10_28_202754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,11 @@ ActiveRecord::Schema.define(version: 2018_10_26_142117) do
     t.string "origin", null: false
     t.string "destination", null: false
     t.integer "distance"
-    t.decimal "tollbooths", precision: 10, scale: 2
+    t.decimal "tollbooths_2_to_4_edges", precision: 10, scale: 2
     t.integer "days"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "tollbooths_5_to_6_edges", precision: 10, scale: 2
   end
 
   create_table "vehicle_category_and_payments", force: :cascade do |t|
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(version: 2018_10_26_142117) do
     t.bigint "vehicle_category_and_payment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "edges"
     t.index ["vehicle_category_and_payment_id"], name: "index_vehicles_on_vehicle_category_and_payment_id"
   end
 

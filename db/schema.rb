@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2018_10_26_142117) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "routes", force: :cascade do |t|
     t.string "origin", null: false
     t.string "destination", null: false
@@ -37,11 +34,10 @@ ActiveRecord::Schema.define(version: 2018_10_26_142117) do
     t.string "brand"
     t.string "vehicle_type"
     t.integer "year"
-    t.bigint "vehicle_category_and_payment_id"
+    t.integer "vehicle_category_and_payment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["vehicle_category_and_payment_id"], name: "index_vehicles_on_vehicle_category_and_payment_id"
   end
 
-  add_foreign_key "vehicles", "vehicle_category_and_payments"
 end

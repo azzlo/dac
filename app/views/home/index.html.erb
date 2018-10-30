@@ -1,7 +1,54 @@
-<h1>COTIZADOR DE OPERACION</h1>
+<h1>INICIO cotizador de gastos de operacion</h1>
 <p>Find me in app/views/home/index.html.erb</p>
 <%= link_to "Vehículos", vehicles_path %>
 <br>
 <%= link_to "Categoria vehiculos y paga", vehicle_category_and_payments_path %>
 <br>
 <%= link_to "Rutas", routes_path %>
+<h2> Introduce la unidad y el destino</h2>
+<br>
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Precio Combustible</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    <label for="exampleFormControlInput1">Dias de ruta</label>
+    <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Tipo de unidad</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>trailer</option>
+      <option>worker</option>
+    </select>
+    <label for="exampleFormControlSelect1">ECO</label>
+    <select class="form-control" id="exampleFormControlSelect2">
+      <option>2</option>
+      <option>14</option>
+    </select>
+    <label for="exampleFormControlSelect1">Origen</label>
+    <select class="form-control" id="exampleFormControlSelect3">
+      <option>MEXICO</option>
+
+    </select>
+    <label for="exampleFormControlSelect1">Destino</label>
+    <select class="form-control" id="exampleFormControlSelect4">
+      <option>Monterrey</option>
+      <option>Mazatlan</option>
+    </select>
+    <label for="exampleFormControlSelect1">Agregar accesorios</label>
+    <select class="form-control" id="exampleFormControlSelect5">
+      <option>cafe</option>
+      <option>maniobra extra</option>
+    </select>
+     <button type="submit" class="btn btn-primary mb-2">Calcular costo de operacion</button>
+  </div>
+</form>
+<br>
+<br>
+<label for="exampleFormControlSelect1">Viaticos tanto</label>
+<label for="exampleFormControlSelect1">Kilometros tanto</label>
+<label for="exampleFormControlSelect1">Kilometros ida y vuelta tanto</label>
+<label for="exampleFormControlSelect1">Casetas total</label>
+<label for="exampleFormControlSelect1">Pago operador tanto</label>
+<label for="exampleFormControlSelect1">Litros de combustible tanto</label>
+<label for="exampleFormControlSelect1">total operacion tanto</label>

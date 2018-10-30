@@ -1,29 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Vehicles</h1>
+<h1>Parque Vehicular</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Brand</th>
-      <th>Type</th>
-      <th>Year</th>
-      <th>Vehicle category and payment</th>
-      <th colspan="3"></th>
+
+      <th>ECO</th>
+      <th>MARCA</th>
+      <th>TIPO</th>
+      <th>AÑO</th>
+      <th>Rendimiento KM/COMB</th>
+      <th>PAGO DE VEHICULO POR CATEGORIA</th>
+      <th>NUMERO DE EJES</th>
+      <th colspan="4"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @vehicles.each do |vehicle| %>
       <tr>
+        <td><%= vehicle.economic %></td>
         <td><%= vehicle.brand %></td>
         <td><%= vehicle.vehicle_type %></td>
         <td><%= vehicle.year %></td>
+        <td><%= vehicle.performance_km_fuel %></td>
         <td><%= vehicle.vehicle_category_and_payment %></td>
         <td><%= vehicle.edges %></td>
-        <td><%= link_to 'Show', vehicle %></td>
-        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
-        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', vehicle %></td>
+        <td><%= link_to 'Editar', edit_vehicle_path(vehicle) %></td>
+        <td><%= link_to 'Eliminar', vehicle, method: :delete, data: { confirm: 'Esta seguro de desear eliminar un vehiculo?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,4 +37,4 @@
 
 <br>
 
-<%= link_to 'New Vehicle', new_vehicle_path %>
+<%= link_to 'Agregar Vehiculo', new_vehicle_path %>

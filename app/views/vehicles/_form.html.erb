@@ -12,27 +12,34 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :brand %>
+    <%= form.label :ECO %>
+    <%= form.text_field :economic %>
+  </div>
+  <div class="field">
+    <%= form.label :MARCA %>
     <%= form.text_field :brand %>
   </div>
 
   <div class="field">
-    <%= form.label :vehicle_type %>
+    <%= form.label :TIPO %>
     <%= form.text_field :vehicle_type %>
   </div>
 
   <div class="field">
-    <%= form.label :year %>
+    <%= form.label :AÑO %>
     <%= form.number_field :year %>
   </div>
-
   <div class="field">
-    <%= form.label :edges %>
-    <%= form.select :edges, %w[2 3 4 5 6] %>
+    <%= form.label :Rendimiento%>
+    <%= form.number_field :performance_km_fuel %>
   </div>
 
   <div class="field">
-    <%= form.label :vehicle_category_and_payment_id %>
+    <%= form.label :EJES %>
+    <%= form.select :edges, %w[2 3 4 5 6] %>
+  </div>
+  <div class="field">
+    <%= form.label :PAGO_POR_CATEGORIA_DE_VEHICULO %>
     <%= form.select :vehicle_category_and_payment_id, VehicleCategoryAndPayment.all.collect{ |v| [v.category, v.id] } %>
   </div>
 

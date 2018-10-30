@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<p>
+  <strong>ECO:</strong>
+  <%= @vehicle.economic %>
+</p>
 <p>
   <strong>Brand:</strong>
   <%= @vehicle.brand %>
@@ -14,7 +17,10 @@
   <strong>Year:</strong>
   <%= @vehicle.year %>
 </p>
-
+<p>
+  <strong>Rendimiento KM/COMB:</strong>
+  <%= @vehicle.performance_km_fuel %>
+</p>
 <p>
   <strong>Ejes:</strong>
   <%= @vehicle.edges %>

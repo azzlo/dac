@@ -1,7 +1,10 @@
-<h1>COTIZADOR DE OPERACION</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<%= link_to "Vehículos", vehicles_path %>
-<br>
-<%= link_to "Categoria vehiculos y paga", vehicle_category_and_payments_path %>
-<br>
-<%= link_to "Rutas", routes_path %>
+<div class="container">
+  <p>Bueno aqui vamos a poner el formulario para cotizar los viajes</p>
+
+  <%= form_tag do %>
+
+    <%= select_tag :vehicle, options_for_select( Vehicle.all.collect { |v| ["#{v.license_plate || NANANA} - #{v.year} - #{v.brand} - #{v.vehicle_type}", v.id]} ), {include_blank: "Selecciona un vehículo..."} %>
+
+    <%= submit_tag 'Calcular', class: 'button' %>
+  <% end %>
+</div>

@@ -1,37 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>Rutas</h1>
 
-<h1>Routes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Origin</th>
-      <th>Destination</th>
-      <th>Distance</th>
-      <th>Tollbooths 2-4 Edges</th>
-      <th>Tollbooths 5-6 Edges</th>
-      <th>Days</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @routes.each do |route| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= route.origin %></td>
-        <td><%= route.destination %></td>
-        <td><%= route.distance %></td>
-        <td><%= route.tollbooths_2_to_4_edges %></td>
-        <td><%= route.tollbooths_5_to_6_edges %></td>
-        <td><%= route.days %></td>
-        <td><%= link_to 'Show', route %></td>
-        <td><%= link_to 'Edit', edit_route_path(route) %></td>
-        <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Origen</th>
+        <th>Destino</th>
+        <th>Distancia</th>
+        <th>Casetas 2-4 Ejes</th>
+        <th>Casetas 5-6 Ejes</th>
+        <th>Dias</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @routes.each do |route| %>
+        <tr>
+          <td><%= route.origin %></td>
+          <td><%= route.destination %></td>
+          <td><%= route.distance %></td>
+          <td><%= route.tollbooths_2_to_4_edges %></td>
+          <td><%= route.tollbooths_5_to_6_edges %></td>
+          <td><%= route.days %></td>
+          <td><%= link_to 'Show', route %></td>
+          <td><%= link_to 'Edit', edit_route_path(route) %></td>
+          <td><%= link_to 'Destroy', route, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Route', new_route_path %>
+  <br>
+
+  <%= link_to 'New Route', new_route_path %>
+</div>
+
+

@@ -36,6 +36,11 @@
     <%= form.select :vehicle_category_and_payment_id, VehicleCategoryAndPayment.all.collect{ |v| [v.category, v.id] } %>
   </div>
 
+  <div class="field">
+    <%= form.label :license_plate, 'Placas' %>
+    <%= form.text_field :license_plate %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

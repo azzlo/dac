@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_28_202754) do
+ActiveRecord::Schema.define(version: 2018_10_30_020024) do
 
   create_table "routes", force: :cascade do |t|
     t.string "origin", null: false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2018_10_28_202754) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "edges"
+    t.string "license_plate"
     t.index ["vehicle_category_and_payment_id"], name: "index_vehicles_on_vehicle_category_and_payment_id"
   end
 

@@ -1,10 +1,27 @@
 <div class="container">
+  <h1>INICIO cotizador de gastos de operacion</h1>
   <p>Bueno aqui vamos a poner el formulario para cotizar los viajes</p>
 
   <%= form_tag do %>
+    <div class="row">
+      <div class="col-sm">    
+        <%= select_tag :vehicle, options_for_select( Vehicle.all.collect { |v| ["#{v.license_plate || NANANA} - #{v.year} - #{v.brand} - #{v.vehicle_type}", v.id]} ), {include_blank: "Selecciona un vehículo...", id: 'vehicle_select', class: 'form-control' } %>
+        <div id="vehicleInfo" class="calc-info">
+        </div>
+      </div>
 
-    <%= select_tag :vehicle, options_for_select( Vehicle.all.collect { |v| ["#{v.license_plate || NANANA} - #{v.year} - #{v.brand} - #{v.vehicle_type}", v.id]} ), {include_blank: "Selecciona un vehículo..."} %>
+      <div class="col-sm">    
+        <%= select_tag :vehicle, options_for_select( Route.all.collect { |r| ["#{r.origin} - #{r.destination}", r.id]} ), {include_blank: "Selecciona una ruta...", id: 'route_select', class: 'form-control' } %>
+        <div id="routeInfo" class="calc-info">
+        </div>
+      </div>
+    </div>
 
-    <%= submit_tag 'Calcular', class: 'button' %>
+    <div class="row">
+      <div class="col-sm text-right">
+        <%= submit_tag 'Calcular', class: 'button' %>
+      </div>
+    </div>
+
   <% end %>
 </div>

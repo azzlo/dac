@@ -26,3 +26,4 @@
 /config/master.key
 
 config/database.yml
+db/development.sqlite3

@@ -1,27 +1,83 @@
 <div class="container">
-  <h1>INICIO cotizador de gastos de operacion</h1>
-  <p>Bueno aqui vamos a poner el formulario para cotizar los viajes</p>
-
+  <h1>Cotizador de Gastos de Operacion</h1>
+  <hr>
   <%= form_tag do %>
     <div class="row">
-      <div class="col-sm">    
+      <div class="col-sm">
+        <%= label_tag :vehicle, 'Vehículo' %> 
         <%= select_tag :vehicle, options_for_select( Vehicle.all.collect { |v| ["#{v.license_plate || NANANA} - #{v.year} - #{v.brand} - #{v.vehicle_type}", v.id]} ), {include_blank: "Selecciona un vehículo...", id: 'vehicle_select', class: 'form-control' } %>
         <div id="vehicleInfo" class="calc-info">
         </div>
       </div>
 
-      <div class="col-sm">    
-        <%= select_tag :vehicle, options_for_select( Route.all.collect { |r| ["#{r.origin} - #{r.destination}", r.id]} ), {include_blank: "Selecciona una ruta...", id: 'route_select', class: 'form-control' } %>
+      <div class="col-sm">
+        <%= label_tag :route, 'Ruta' %> 
+        <%= select_tag :route, options_for_select( Route.all.collect { |r| ["#{r.origin} - #{r.destination}", r.id]} ), {include_blank: "Selecciona una ruta...", id: 'route_select', class: 'form-control' } %>
         <div id="routeInfo" class="calc-info">
         </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-sm text-right">
-        <%= submit_tag 'Calcular', class: 'button' %>
+    <div class="row ">
+      <div class="col-sm-2">
+        <%= label_tag :days, 'Dias' %> 
+        <%= number_field_tag :days, {}, class: 'form-control' %>
+        <div id="vehicleInfo" class="calc-info">
+        </div>
+      </div>
+
+      <div class="col-sm-2 text-center">
+        <span>Comida por dias</span>
+        <br><br>
+        <strong>$150.00</strong>
+      </div>
+
+      <div class="col-sm-2">
+        <%= label_tag :fuel_by_liter, 'Costo Combustible/Lt' %> 
+        <%= number_field_tag :fuel_by_liter, {}, class: 'form-control' %>
+        <div id="vehicleInfo" class="calc-info">
+        </div>
+      </div>
+
+      <div class="col-sm-2 text-center">
+        <span>Litros de ruta</span>
+        <br><br>
+        <strong id="routeLiters"></strong>
+      </div>
+
+      <div class="col-sm-4 text-right">
+        <%= submit_tag 'Calcular', id: 'calcButton', class: 'btn btn-primary btn-lg' %>
       </div>
     </div>
 
   <% end %>
+
+
+  <div id="resultsContainer" class="row">
+      <div class="col-sm-2 text-center">
+        <h4 id="resumeDistance"></h4>
+        <span>Pago distancia</span>
+      </div>
+
+      <div class="col-sm-2 text-center">
+       <h4 id="resumeTollbooths"></h4>
+        <span>Casetas</span>
+      </div>
+
+      <div class="col-sm-2 text-center">
+       <h4 id="resumeFood"></h4>
+        <span>Comida</span>
+      </div>
+
+      <div class="col-sm-2 text-center">
+       <h4 id="resumeFuel"></h4>
+        <span>Combustible</span>
+      </div>
+
+       <div class="col-sm-2 text-center">
+       <h4><strong id="resumeOperation"></strong></h4>
+        <span>Costo Operación</span>
+      </div>
+    </div>
+
 </div>
